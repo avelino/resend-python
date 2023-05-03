@@ -87,13 +87,13 @@ class ValidationError(ResendError):
         error_type,
         code,
     ):
-        default_message = """
-        The request body is missing one or more required fields."""
-
         suggested_action = """Check the error message
         to see the list of missing fields."""
 
         if message == "":
+            default_message = """
+        The request body is missing one or more required fields."""
+
             message = default_message
 
         ResendError.__init__(
@@ -114,13 +114,13 @@ class MissingRequiredFieldsError(ResendError):
         error_type,
         code,
     ):
-        default_message = """
-        The request body is missing one or more required fields."""
-
         suggested_action = """Check the error message
         to see the list of missing fields."""
 
         if message != "":
+            default_message = """
+        The request body is missing one or more required fields."""
+
             message = default_message
 
         ResendError.__init__(
